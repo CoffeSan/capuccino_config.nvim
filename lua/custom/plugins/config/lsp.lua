@@ -47,6 +47,7 @@ end
 local servers = {
   csharp_ls = {},
   rust_analyzer = {},
+  svelte = {},
   tsserver = {},
   lua_ls = {
     Lua = {

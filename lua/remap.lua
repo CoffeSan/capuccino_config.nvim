@@ -12,4 +12,3 @@ vim.keymap.set('n', '<C-N>', ':bnext<CR>')
 vim.keymap.set('n', '<C-P>', ':bprev<CR>')
 
 vim.keymap.set('t', '<C-X>', "<C-\\><C-n><C-w>h")
-
