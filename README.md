@@ -19,14 +19,6 @@ git clone https://github.com/fabriciohod/capuccino_config.nvim.git $HOME\AppData
 git clone https://github.com/fabriciohod/capuccino_config.nvim.git ~/.config/nvim --depth 1 && nvim
 ```
 
-## Features
-
-- **kickstart.vim**: The foundation of my configuration.
-
-- **Plugins**: Selected plugins for my workflow.
-
-- **Custom Keybinds**: Optimized keybindings.
-
 ## Customization
 
 Feel free to modify the configuration according to your needs.
