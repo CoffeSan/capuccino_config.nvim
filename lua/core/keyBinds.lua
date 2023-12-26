@@ -1,5 +1,4 @@
 local keymap = vim.keymap
-local move_line = require('core.utils')
 
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
