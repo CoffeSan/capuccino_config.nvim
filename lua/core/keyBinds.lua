@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local move_line = require('core.utils')
 
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -13,3 +14,6 @@ keymap.set('n', '<C-N>', ':bnext<CR>')
 keymap.set('n', '<C-P>', ':bprev<CR>')
 
 keymap.set('t', '<C-X>', "<C-\\><C-n><C-w>h")
+
+keymap.set('n', '<A-j>', ':m +1<CR>')
+keymap.set('n', '<A-k>', ':m -2<CR>')
