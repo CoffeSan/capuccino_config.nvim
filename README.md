@@ -3,7 +3,7 @@
 
 # capuccino_config.nvim
 
-This is my personal configuration for [Neovim](https://neovim.io/), based on [kickstart.vim](https://github.com/nvim-lua/kickstart.nvim). It includes plugins for my work, custom keybinds, and various optimizations.
+This is my personal configuration for [Neovim](https://neovim.io/), it includes plugins for my work, custom keybinds, and various optimizations.
 
 ## Installation
 

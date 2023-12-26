@@ -1,3 +1,3 @@
-require("core.set")
-require("core.mapping")
-require("core.lazy")
+require "core.set"
+require "core.keyBinds"
+require "plugins"

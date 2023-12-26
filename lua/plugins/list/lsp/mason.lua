@@ -15,18 +15,7 @@ return {
             }
         })
         mason_lspconfig.setup({
-            ensure_installed =
-            {
-                "csharp_ls",
-                "omnisharp",
-                "rust_analyzer",
-                "tsserver",
-                "html",
-                "tailwindcss",
-                "svelte",
-                "emmet_ls",
-                "lua_ls",
-            },
+            ensure_installed = require("plugins.list.lsp.servers"),
             automatic_installation = true
         })
     end

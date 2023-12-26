@@ -1,9 +1,8 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	config = function()
+		require 'nvim-treesitter.install'.compilers = { 'zig' }
 		require 'nvim-treesitter.configs'.setup {
-			ensure_installed = { 'c_sharp', 'rust', 'typescript', 'markdown' },
-
 			sync_install = false,
 			auto_install = true,
 
