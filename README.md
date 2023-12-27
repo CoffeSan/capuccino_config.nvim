@@ -5,7 +5,7 @@
 This is my personal configuration for [Neovim](https://neovim.io/), it includes plugins for my work, custom keybinds, and various optimizations.
 
 ## Installation
-> [!IMPORT]
+> [!IMPORTANT]
 > Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep) and [zig compiler](https://ziglang.org/download/).
 
 ### Windows
