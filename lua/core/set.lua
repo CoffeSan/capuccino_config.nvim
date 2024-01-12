@@ -23,11 +23,9 @@ opt.expandtab = true               -- Use spaces instead of tabs
 opt.tabstop = 4                    -- Number of spaces that a <Tab> in the file counts for
 opt.softtabstop = 4                -- Number of spaces that a <Tab> counts for while editing
 opt.shiftwidth = 4                 -- Number of spaces used for auto-indenting
-opt.spelllang = 'en_us'            -- Set spelling language to English
-opt.spell = true                   -- Enable spelling
 
 --- Global Options
-o.hlsearch = false          -- Disable highlight search
+o.hlsearch =  true          -- Enable highlight search
 o.mouse = 'a'               -- Enable mouse support in all modes
 o.clipboard = 'unnamedplus' -- Use system clipboard
 o.breakindent = true        -- Enable break indent

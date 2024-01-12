@@ -1,4 +1,3 @@
---- Keymap Configuration
 -- Define local variables for keymap and command functions
 local keymap = vim.keymap
 local cmd = vim.cmd
@@ -36,17 +35,6 @@ keymap.set("n", "<A-4>", function() harpoon:list():select(4) end, { desc = 'Go t
 keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end, { desc = 'Previous buffer' })  -- Map Ctrl + Shift + P to go to the previous buffer in the Harpoon list
 keymap.set("n", "<C-S-N>", function() harpoon:list():next() end, { desc = 'Next buffer' })  -- Map Ctrl + Shift + N to go to the next buffer in the Harpoon list
 
---- cmp Binds
-local cmp = require("cmp")
-cmp.mapping.preset.insert({
-    ["<C-k>"] = cmp.mapping.select_prev_item(),  -- Map Ctrl + K to select the previous suggestion
-    ["<C-j>"] = cmp.mapping.select_next_item(),  -- Map Ctrl + J to select the next suggestion
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),      -- Map Ctrl + B to scroll documentation up
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),       -- Map Ctrl + F to scroll documentation down
-    ["<C-Space>"] = cmp.mapping.complete(),       -- Map Ctrl + Space to show completion suggestions
-    ["<C-e>"] = cmp.mapping.abort(),              -- Map Ctrl + E to close the completion window
-    ["<CR>"] = cmp.mapping.confirm({ select = false }),  -- Map Enter to confirm without selecting
-})
 
 --- oil Bind
 keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })  -- Map - to open the parent directory using Oil
@@ -109,7 +97,3 @@ keymap.set("n", "K", lspBuf.hover, opts)  -- Map K to show documentation for wha
 
 opts.desc = "Restart LSP"
 keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)  -- Map leader + rs to restart LSP
-
---- LSP Format Buffer Binds
-opts.desc = "Format current buffer"
-keymap.set("n", "<C-f>", lspBuf.format, opts)  -- Map Ctrl + F to format the current buffer using LSP

@@ -25,6 +25,15 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
+			mapping = cmp.mapping.preset.insert({
+				["<C-k>"] = cmp.mapping.select_prev_item(), -- Map Ctrl + K to select the previous suggestion
+				["<C-j>"] = cmp.mapping.select_next_item(), -- Map Ctrl + J to select the next suggestion
+				["<C-b>"] = cmp.mapping.scroll_docs(-4), -- Map Ctrl + B to scroll documentation up
+				["<C-f>"] = cmp.mapping.scroll_docs(4), -- Map Ctrl + F to scroll documentation down
+				["<C-Space>"] = cmp.mapping.complete(), -- Map Ctrl + Space to show completion suggestions
+				["<C-e>"] = cmp.mapping.abort(),        -- Map Ctrl + E to close the completion window
+				["<CR>"] = cmp.mapping.confirm({ select = false }), -- Map Enter to confirm without selecting
+			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
