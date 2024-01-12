@@ -21,6 +21,8 @@ keymap.set('t', '<C-X>', "<C-\\><C-n><C-w>h")  -- Map Ctrl + X to move cursor to
 --- Move Line Binds
 keymap.set('n', '<A-j>', ':m +1<CR>')  -- Map Alt + j to move the current line down
 keymap.set('n', '<A-k>', ':m -2<CR>')  -- Map Alt + k to move the current line up
+keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv") -- Move line down in visual mode
+keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv") -- Move line up in visual mode
 
 --- Harpoon Binds
 local harpoon = require("harpoon")
