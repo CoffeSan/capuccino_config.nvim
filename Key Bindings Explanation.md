@@ -58,3 +58,12 @@
 - `K` in normal mode: Show documentation for what is under the cursor.
 - `<leader>rs` in normal mode: Restart LSP.
 - `<C-f>` in normal mode: Format the current buffer.
+
+## Trouble Binds
+
+- `<leader>xx` in normal mode: Toggle the Trouble plugin.
+- `<leader>xw` in normal mode: Toggle workspace diagnostics in Trouble.
+- `<leader>xd` in normal mode: Toggle document diagnostics in Trouble.
+- `<leader>xq` in normal mode: Toggle quickfix in Trouble.
+- `<leader>xl` in normal mode: Toggle location list in Trouble.
+- `gR` in normal mode: Toggle LSP references in Trouble.

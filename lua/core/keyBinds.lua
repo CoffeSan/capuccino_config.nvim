@@ -45,6 +45,15 @@ keymap.set('n', '<leader>ff', telescope.find_files, { desc = 'Find File' })  -- 
 keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Find With Grep' })  -- Map leader + fg to live grep using Telescope
 keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Find Open Buffer' })  -- Map leader + fb to find open buffers using Telescope
 
+--- Trouble Binds
+keymap.set("n", "<leader>xx", function() require("trouble").toggle() end) -- Toggle the Trouble plugin
+keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end) -- Toggle workspace diagnostics in Trouble
+keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end) -- Toggle document diagnostics in Trouble
+keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end) -- Toggle quickfix in Trouble
+keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end) -- Toggle location list in Trouble
+keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end) -- Toggle LSP references in Trouble
+
+
 --- Lsp config Binds
 local lspBuf = vim.lsp.buf
 local diagnostics = vim.diagnostic
