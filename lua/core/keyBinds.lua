@@ -1,3 +1,4 @@
+--- Keymap Configuration
 -- Define local variables for keymap and command functions
 local keymap = vim.keymap
 local cmd = vim.cmd
@@ -82,4 +83,33 @@ opts.desc = "Show LSP type definitions"
 keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)  -- Map gt to show LSP type definitions using Telescope
 
 --- LSP Code Actions Binds
-opts.desc = "See available code"
+opts.desc = "See available code actions"
+keymap.set({ "n", "v" }, "<leader>ca", lspBuf.code_action, opts)  -- Map leader + ca to see available code actions using LSP
+
+--- LSP Rename and Diagnostics Binds
+opts.desc = "Smart rename"
+keymap.set("n", "<leader>rn", lspBuf.rename, opts)  -- Map leader + rn to perform a smart rename using LSP
+
+opts.desc = "Show buffer diagnostics"
+keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)  -- Map leader + D to show buffer diagnostics using Telescope
+
+opts.desc = "Show line diagnostics"
+keymap.set("n", "<leader>d", diagnostics.open_float, opts)  -- Map leader + d to show line diagnostics using Vim's diagnostics
+
+--- LSP Diagnostic Navigation Binds
+opts.desc = "Go to previous diagnostic"
+keymap.set("n", "[d", diagnostics.goto_prev, opts)  -- Map [d to go to the previous diagnostic
+
+opts.desc = "Go to next diagnostic"
+keymap.set("n", "]d", diagnostics.goto_next, opts)  -- Map ]d to go to the next diagnostic
+
+--- LSP Hover and Restart Binds
+opts.desc = "Show documentation for what is under cursor"
+keymap.set("n", "K", lspBuf.hover, opts)  -- Map K to show documentation for what is under the cursor using LSP
+
+opts.desc = "Restart LSP"
+keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)  -- Map leader + rs to restart LSP
+
+--- LSP Format Buffer Binds
+opts.desc = "Format current buffer"
+keymap.set("n", "<C-f>", lspBuf.format, opts)  -- Map Ctrl + F to format the current buffer using LSP
