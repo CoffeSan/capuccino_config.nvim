@@ -35,7 +35,6 @@ keymap.set("n", "<A-4>", function() harpoon:list():select(4) end, { desc = 'Go t
 keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end, { desc = 'Previous buffer' })  -- Map Ctrl + Shift + P to go to the previous buffer in the Harpoon list
 keymap.set("n", "<C-S-N>", function() harpoon:list():next() end, { desc = 'Next buffer' })  -- Map Ctrl + Shift + N to go to the next buffer in the Harpoon list
 
-
 --- oil Bind
 keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })  -- Map - to open the parent directory using Oil
 
@@ -46,13 +45,13 @@ keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Find With Grep' }) 
 keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Find Open Buffer' })  -- Map leader + fb to find open buffers using Telescope
 
 --- Trouble Binds
-keymap.set("n", "<leader>xx", function() require("trouble").toggle() end) -- Toggle the Trouble plugin
-keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end) -- Toggle workspace diagnostics in Trouble
-keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end) -- Toggle document diagnostics in Trouble
-keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end) -- Toggle quickfix in Trouble
-keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end) -- Toggle location list in Trouble
-keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end) -- Toggle LSP references in Trouble
-
+local trouble = require("trouble")
+keymap.set("n", "<leader>xx", function() trouble.toggle() end) -- Toggle the Trouble plugin
+keymap.set("n", "<leader>xw", function() trouble.toggle("workspace_diagnostics") end) -- Toggle workspace diagnostics in Trouble
+keymap.set("n", "<leader>xd", function() trouble.toggle("document_diagnostics") end) -- Toggle document diagnostics in Trouble
+keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end) -- Toggle quickfix in Trouble
+keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end) -- Toggle location list in Trouble
+keymap.set("n", "gR", function() trouble.toggle("lsp_references") end) -- Toggle LSP references in Trouble
 
 --- Lsp config Binds
 local lspBuf = vim.lsp.buf
