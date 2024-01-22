@@ -3,6 +3,7 @@ local keymap = vim.keymap
 local cmd = vim.cmd
 
 -- Neo Vim Binds
+
 -- Map Space to No operation (Nop) in normal and visual mode
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Map k to gk or k based on count in normal mode
@@ -15,12 +16,6 @@ keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 keymap.set('n', '<C-s>', cmd.wall, { desc = 'Save Current File' })
 -- Map Ctrl + Q to close the current buffer
 keymap.set('n', '<C-Q>', cmd.bd)
-
--- Buffer Navigation Binds
--- Map Ctrl + N to go to the next open buffer
-keymap.set('n', '<C-N>', ':bnext<CR>')
--- Map Ctrl + P to go to the previous open buffer
-keymap.set('n', '<C-P>', ':bprev<CR>')
 
 -- Terminal Mode Bind
 -- Map Ctrl + X to move cursor to the split window on the left
@@ -73,17 +68,17 @@ keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Find Open Buffer' })
 -- Trouble Binds
 local trouble = require("trouble")
 -- Toggle the Trouble plugin
-keymap.set("n", "<leader>xx", function() trouble.toggle() end)
+keymap.set("n", "<leader>xx", function() trouble.toggle() end, { desc = 'Toggle the Trouble plugin' })
 -- Toggle workspace diagnostics in Trouble
-keymap.set("n", "<leader>xw", function() trouble.toggle("workspace_diagnostics") end)
+keymap.set("n", "<leader>xw", function() trouble.toggle("workspace_diagnostics") end, { desc = 'Toggle workspace diagnostics in Trouble' })
 -- Toggle document diagnostics in Trouble
-keymap.set("n", "<leader>xd", function() trouble.toggle("document_diagnostics") end)
--- Toggle quickfix in Trouble
-keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end)
+keymap.set("n", "<leader>xd", function() trouble.toggle("document_diagnostics") end, { desc = 'Toggle document diagnostics in Trouble' })
+-- Toggle Quickfix in Trouble
+keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end, { desc = 'Toggle Quickfix in Trouble' })
 -- Toggle location list in Trouble
-keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end)
+keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end, { desc = 'Toggle location list in Trouble' })
 -- Toggle LSP references in Trouble
-keymap.set("n", "gR", function() trouble.toggle("lsp_references") end)
+keymap.set("n", "gR", function() trouble.toggle("lsp_references") end, { desc = 'Toggle LSP references in Trouble' })
 
 -- Lsp config Binds
 local lspBuf = vim.lsp.buf
