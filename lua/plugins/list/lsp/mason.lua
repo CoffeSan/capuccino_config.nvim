@@ -6,14 +6,10 @@ return {
         local mason_lspconfig = require("mason-lspconfig")
         local servers = {
             "csharp_ls",
-            "omnisharp",
-            "rust_analyzer",
-            "tsserver",
             "html",
             "tailwindcss",
             "svelte",
             "lua_ls",
-            "gopls"
         }
 
         mason.setup({
